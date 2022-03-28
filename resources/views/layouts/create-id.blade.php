@@ -5,7 +5,7 @@
             <div class="col-md-12 col-lg-12 text-center">
                 <img src="https://api.gopunt.com/uploads/accounts/accImg-1617381060032.png" style="height:40px">
                 <h5 class="text-light">Go Exchange 9<h5>
-                <h6 class="text-light">goexch9.com</h6>
+                        <h6 class="text-light">goexch9.com</h6>
             </div>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
@@ -25,23 +25,23 @@
                                 <div class="single-profile-data d-flex align-items-center justify-content-between">
                                     <div class="title d-flex align-items-center text-light"><span>Min Refill
                                         </span></div>
-                                    <div class="data-content">Octopusonline5</div>
+                                    <div class="data-content">100</div>
                                 </div>
                                 <div class="single-profile-data d-flex align-items-center justify-content-between">
                                     <div class="title d-flex align-items-center text-light"><span>Min Withdrawal
                                         </span></div>
-                                    <div class="data-content">Octopusonline5</div>
+                                    <div class="data-content">100</div>
                                 </div>
                                 <div class="single-profile-data d-flex align-items-center justify-content-between">
                                     <div class="title d-flex align-items-center text-light"><span>Min Maintaining Bal
                                         </span></div>
-                                    <div class="data-content">Demo1234</div>
+                                    <div class="data-content">100</div>
                                 </div>
                                 <div class="single-profile-data d-flex align-items-center justify-content-between">
                                     <div class="title d-flex align-items-center text-light"><span>Max Withdrawal
 
                                         </span></div>
-                                    <div class="data-content">Demo1234</div>
+                                    <div class="data-content">1000</div>
                                 </div>
                             </div>
                         </div>
@@ -54,13 +54,13 @@
                         @csrf
                         <div class="mb-3">
                             <label class="form-label text-light">Username *</label>
-                            <input type="text" class="form-control text-white" :value="old('username')" required autofocus
-                                          name="username">
+                            <input type="text" class="form-control text-white" :value="old('username')" required
+                                autofocus name="username">
                         </div>
                         <div class="mb-3">
                             <label class="form-label text-light">Deposite Coin*</label>
-                            <input type="number" class="form-control text-white" :value="old('coins')" required autofocus
-                                          name="coins" value="100">
+                            <input type="number" class="form-control text-white" :value="old('coins')" required
+                                autofocus name="coins" value="100">
                         </div>
                         <div class="form-check">
                             <label class="form-check-label text-light">
@@ -70,12 +70,12 @@
                             </label>
                         </div>
                         <div class="d-grid my-4 text-light">
-                            <button class="btn btn-warning padding-10" type="submit">Continue to PAY Rs 100</button>
+                            <button class="btn btn-warning padding-10" type="submit">Continue to PAY</button>
                     </form>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>
 @include('layouts/footer')

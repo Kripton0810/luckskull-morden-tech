@@ -12,7 +12,7 @@ use App\Http\Controllers\ImageUploadController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use Illuminate\Support\Facades\Session;
-
+use App\Http\Controllers\otpvarifyController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,7 +35,7 @@ Route::get('/dashboard', function () {
     }
     else
     {
-        url('login');
+        return redirect('login');
     }
 })->middleware(['auth'])->name('dashboard');
 
@@ -47,9 +47,18 @@ Route::post('loginform', [LoginController::class, 'store'])->name('loginform');
 Route::get('registerform', [RegisteredUserController::class, 'create'])->name('registerform');
 Route::post('register', [RegisteredUserController::class, 'store'])->name('register');
 
+Route::get('terms', [HomeController::class, 'terms'])->name('terms');
+Route::get('refer-and-earn', [HomeController::class, 'refer'])->name('refer');
+Route::get('my-profile', [HomeController::class, 'myprofile'])->name('profile');
+
 Route::get('account-information', [LoginController::class, 'formid'])->name('account-information');
 
-Route::get('create-id', [LoginController::class, 'createid'])->name('create-id');
+Route::get('createidFairexch9', [LoginController::class, 'createidFairexch9'])->name('create-id');
+Route::get('goexchange247', [LoginController::class, 'goexchange247'])->name('create-id');
+Route::get('exchange247', [LoginController::class, 'exchange247'])->name('create-id');
+Route::get('silverexch', [LoginController::class, 'silverexch'])->name('create-id');
+Route::get('lotusbook247', [LoginController::class, 'lotusbook247'])->name('create-id');
+Route::get('masterexc', [LoginController::class, 'masterexc'])->name('create-id');
 
 
 Route::get('payment-request', [PaymentController::class, 'index'])->name('payment-request');
@@ -59,18 +68,30 @@ Route::get('payment', [PaymentController::class, 'create'])->name('payment');
 Route::get('userlogin', [LoginController::class, 'getlogin'])->name('userlogin');
 Route::post('userloginform', [LoginController::class, 'login'])->name('userloginform');
 
+Route::get('otp-login', [otpvarifyController::class, 'index'])->name('otp-login');
+Route::get('varify', [otpvarifyController::class, 'varify_otp'])->name('varify');
 
-Route::get('otp-login', [LoginController::class, 'sentotp'])->name('otp-login');
+
 Route::get('change-password', [ChangePasswordController::class, 'index']);
 Route::post('change.password', [ChangePasswordController::class, 'store'])->name('change.password');
 
 Route::get('create-account', [PaymentController::class ,'index'])->name('create-account');
 Route::post('createfrom', [PaymentController::class ,'store'])->name('createfrom');
+Route::get('withdraw', [PaymentController::class, 'withdraw'])->name('withdraw');
 
 Route::get('image-upload', [ ImageUploadController::class, 'imageUpload' ])->name('image.upload');
 
 
 Route::get('payment-io-page', [ PaymentController::class, 'paymentio' ])->name('payment.method');
+Route::post('payment-io-page', [ PaymentController::class, 'paymentToAdmin']);
+Route::get('payment-successfull', [ PaymentController::class, 'successfull' ]);
+
+Route::post('withdrawpaytm', [ PaymentController::class, 'withdrawpaytm' ]);
+Route::post('withdrawgooglepay', [ PaymentController::class, 'withdrawgooglepay' ]);
+Route::post('withdrawphonepe', [ PaymentController::class, 'withdrawphonepe' ]);
+Route::post('withdrawpaytmupi', [ PaymentController::class, 'withdrawpaytmupi' ]);
+Route::post('withdrawupi', [ PaymentController::class, 'withdrawupi' ]);
+
 Route::post('image-upload', [ ImageUploadController::class, 'imageUploadPost' ])->name('image.upload.post');
 
 // admin routes

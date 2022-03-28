@@ -11,6 +11,7 @@ use App\Providers\RouteServiceProvider;
 use Twilio\Rest\Client;
 use App\Models\registeruser;
 use App\Models\User;
+use App\Models\varifyotp;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Auth\Events\Validated;
@@ -26,7 +27,13 @@ class LoginController extends Controller
      */
     public function index()
     {
+        if (Session::get('phone')==null) {
+            # code...
         return view('auth.login');
+        }else
+        {
+            return redirect('dashboard');
+        }
 
     }
     public function formid()
@@ -34,10 +41,39 @@ class LoginController extends Controller
         return view('auth.account-information');
 
     }
-    public function createid()
+    public function createidFairexch9()
     {
+        Session::put('web','fairexch9.com');
         return view('layouts.create-id');
+    }
 
+    public function goexchange247()
+    {
+        Session::put('web','goexch247.com');
+        return view('layouts.create-id');
+    }
+
+    public function exchange247()
+    {
+        Session::put('web','exch247.com');
+        return view('layouts.create-id');
+    }
+
+    public function silverexch()
+    {
+        Session::put('web','silverexch.com');
+        return view('layouts.create-id');
+    }
+
+    public function lotusbook247()
+    {
+        Session::put('web','lotusbook247.com');
+        return view('layouts.create-id');
+    }
+    public function masterexc()
+    {
+        Session::put('web','masterexch.com');
+        return view('layouts.create-id');
     }
     public function getlogin()
     {
@@ -207,5 +243,15 @@ class LoginController extends Controller
     public function destroy(Login $login)
     {
         //
+    }
+    
+    public function varify_otp(Request $request)
+    {
+        $users = User::where('otp', $request->otp)->get();
+        Session::put('phone',$request->phone_number);
+        if(sizeof($users) > 0){
+
+            return redirect()->route('userlogin');
+        }
     }
 }

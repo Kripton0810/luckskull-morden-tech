@@ -58,7 +58,7 @@
                                         alt="verification"></p>
                                 <p class="text-white-50 text-center mb-4">Please enter the OTP (one time password) to
                                     verify your account. A Code has been sent to <span
-                                        class="text-light">*******179</span></p>
+                                        class="text-light">phone number</span></p>
                                 <form id="otp-screen" class="form-dark" method="post">
                                     <label class="form-label text-light mb-3">Enter 4 digit code</label>
                                     <div class="row g-3">

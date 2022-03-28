@@ -9,7 +9,6 @@
 body,
 html {
   font-family: 'Work Sans', sans-serif !important;
-
   color: #747794;
   overflow-x: hidden;
   background-color: #101010 !important;
@@ -23,13 +22,13 @@ h5,
 h6 {
   color: #020310;
   line-height: 1.4;
-  font-weight: 700;
 }
 
 p {
   color: #747794;
   font-size: 14px;
   margin-bottom: 5px;
+  font-weight: 300!important;
 }
 
 a,
@@ -255,15 +254,15 @@ textarea:invalid {
 }
 
 .btn-warning {
-  color: #020310;
-  background-color: #ffaf00;
-  border-color: #ffaf00;
+  color: #000;
+  background-color: #ff6700!important;
+  border-color: #ff6700!important;
 }
 
-.btn-warning:hover, .btn-warning:focus {
-  color: #ffffff;
-  background-color: #020310;
-  border-color: #020310;
+.btn-warning:hover{
+  color: #000!important;
+  background-color: #e7aa00!important;
+  border-color: #e7aa00!important;
 }
 
 .btn-danger {
@@ -354,8 +353,7 @@ textarea:invalid {
 .card {
   border-color: transparent !important;
   border-radius: 0.75rem;
-  -webkit-box-shadow: 0 1px 1px 0px #d7def4;
-  box-shadow: 0 1px 1px 0px #d7def4;
+  background-color: #252525!important;
 }
 
 .card .card-body {
@@ -1175,7 +1173,7 @@ textarea:invalid {
 .page-content-wrapper {
   position: relative;
   z-index: 1;
-  margin-top: 50px;
+  margin-top: 15px;
   margin-bottom: 58px;
 }
 
@@ -2440,9 +2438,8 @@ li.suha-dropdown-menu .dropdown-trigger-btn.active i {
 .user-info-card .user-profile {
   position: relative;
   z-index: 1;
-  width: 80px;
-  height: 80px;
   border-radius: 50%;
+  width: 100%;
 }
 
 .user-info-card .user-profile img {
@@ -4215,23 +4212,7 @@ li.suha-dropdown-menu .dropdown-trigger-btn.active i {
 }
 
 /* Contact CSS */
-.form-control {
-  display: block;
-  width: 100%;
-  padding: 0.375rem 0.75rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #212529;
-  background-color: #252525!important;
-  background-clip: padding-box;
-  border: 1px solid #5e5e5f!important;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border-radius: 0.25rem;
-  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-}
+
 
 .form-control:focus {
   -webkit-box-shadow: none;
@@ -5104,6 +5085,10 @@ li.suha-dropdown-menu .dropdown-trigger-btn.active i {
   margin-top: 10px;
 }
 
+.m-top-20 {
+  margin-top: 20px;
+}
+
 .yellow-text {
   color: #ff6700;
 
@@ -5191,4 +5176,198 @@ hr {
 .form-label {
   margin-bottom: 0.5rem;
   letter-spacing: 0px!important;
+}
+.pay-images {
+  margin-right: 12px;
+  border-radius: 50%;
+  width: 35px;
+}
+
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #252425!important;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: 0.3rem;
+  outline: 0;
+  border-top: 4px solid #ff6700!important;
+  box-shadow: 0px 26px 24px #000;
+}
+
+.close{
+  font-size: 30px;
+    border-radius: 0 0 25px 25px;
+    padding: 5px 5px 0px;
+    position: absolute;
+    top: 0;
+    display: inline-flex;
+    justify-content: end;
+    align-items: center;
+    right: 15px;
+    z-index: 10;
+    background: #fb6500;
+    color: #fff;
+}
+.label-m{
+  letter-spacing: -0.1px!important;
+  margin-bottom: 8px!important;
+  font-weight: 400!important;
+  font-size: 13px!important;
+}
+.modal-body {
+  position: relative;
+  flex: 1 1 auto;
+  padding: 0px 30px!important;
+  margin-top: -15px;
+}
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #eceff1!important;
+  background-color: #555555!important;
+  background-clip: padding-box;
+  border: 1px solid #555555!important;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.25rem;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+.modal-header{
+  padding: 28px 12px 23px 30px!important;
+}
+.modal-footer{
+  padding: 14px 27px 20px 17px!important;
+}
+
+#tsum-tabs h1 {
+  padding: 50px 0;
+  font-weight: 400;
+  text-align: center;
+}
+
+#tsum-tabs p {
+  margin: 0 0 20px;
+  line-height: 1.5;
+}
+
+/* #tsum-tabs main {
+  min-width: 320px;
+  max-width: 800px;
+  padding: 50px;
+  margin: 0 auto;
+  background: #fff;
+} */
+
+#tsum-tabs section {
+  display: none;
+  padding: 20px 0 0;
+}
+
+#tsum-tabs input {
+  display: none;
+}
+
+#tsum-tabs label {
+  display: inline-block;
+  margin: 0 0 -1px;
+  padding: 12px 16px;
+  font-weight: 500;
+  text-align: center;
+  color: #bbb;
+  border: 1px solid transparent;
+  background: #383838;
+  border-radius: 10px;
+  letter-spacing: -0.2px;
+  font-size: 15px;
+}
+
+#tsum-tabs label:before {
+  font-family: fontawesome;
+  font-weight: normal;
+  margin-right: 10px;
+  display: none;
+}
+
+#tsum-tabs label[for*='1']:before { content: '\f1cb'; }
+#tsum-tabs label[for*='2']:before { content: '\f17d'; }
+#tsum-tabs label[for*='3']:before { content: '\f16b'; }
+#tsum-tabs label[for*='4']:before { content: '\f1a9'; }
+
+#tsum-tabs label:hover {
+  color: #888;
+  cursor: pointer;
+}
+
+#tsum-tabs input:checked + label {
+  color: #fff;
+  background: #000;
+  border-radius: 10px;
+  border: 1px solid #ff670059;
+}
+
+#tsum-tabs #tab1:checked ~ #content1,
+#tsum-tabs #tab2:checked ~ #content2,
+#tsum-tabs #tab3:checked ~ #content3,
+#tsum-tabs #tab4:checked ~ #content4 {
+  display: block;
+}
+
+@media screen and (max-width: 650px) {
+  #tsum-tabs label {
+    font-size: 0;
+  }
+  #tsum-tabs label:before {
+    margin: 0;
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #tsum-tabs label {
+    padding: 15px;
+  }
+}
+.pay-card{
+  background: #282828;
+  border-radius: 6px;
+}
+.filelabel {
+  width: 120px;
+  border: 2px dashed grey;
+  border-radius: 5px;
+  display: block;
+  padding: 5px;
+  transition: border 300ms ease;
+  cursor: pointer;
+  text-align: center;
+  margin: 0;
+}
+.filelabel i {
+  display: block;
+  font-size: 30px;
+  padding-bottom: 5px;
+}
+.filelabel i,
+.filelabel .title {
+color: grey;
+transition: 200ms color;
+}
+.filelabel:hover {
+border: 2px solid #1665c4;
+}
+.filelabel:hover i,
+.filelabel:hover .title {
+color: #fff;
+}
+#FileInput{
+  display:none;
 }

@@ -7,8 +7,8 @@
     <meta name="description" content="Finest betting portal for the wild punter in you">
     <meta name="keywords" content="betting site, punter, punt, go punt, bet exchange id">
     <meta name="author" content="GoPunt">
-    <link rel="icon" href="assets/images/favicon.png">
-    <title>Octopus Online</title>
+    <link rel="icon" href="assets/images/logo.png">
+    <title>Luckskull</title>
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/fonts.css" rel="stylesheet">
