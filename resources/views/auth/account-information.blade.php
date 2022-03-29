@@ -26,7 +26,7 @@
                                     </div>
                                     <div class="col-lg-4" align="right">
                                         <a href="createidFairexch9" class="btn btn-secondary btn-sm btn-orange">Create
-                                            ID</a>
+                                            ID11</a>
                                     </div>
                                 </div>
                                 <div class="panel">
@@ -114,8 +114,7 @@
                                                         <div class="data-content">100</div>
                                                     </div>
 
-                                                    <div
-                                                        class="single-profile-data d-flex align-items-center justify-content-between">
+                                                    <div class="single-profile-data d-flex align-items-center justify-content-between">
                                                         <div class="title d-flex align-items-center">
                                                             <img src="assets1/img/svg/bet-politics.svg"
                                                                 style="height:13px">
@@ -149,7 +148,7 @@
                                     </div>
                                 </div>
 
-                                <a class="list-group-item d-flex align-items-center" href="#">
+                                <div class="list-group-item d-flex align-items-center">
                                     <div class="col-lg-8 d-flex">
                                         <span class="noti-icon">
                                             <img src="assets1/img/icon/2.png" alt="" class="ids-images">
@@ -162,10 +161,10 @@
                                         <a href="goexchange247" class="btn btn-secondary btn-sm btn-orange">Create
                                             ID</a>
                                     </div>
-                                </a>
+                                </div>
 
 
-                                <a class="list-group-item d-flex align-items-center" href="#">
+                                <div class="list-group-item d-flex align-items-center" href="#">
                                     <div class="col-lg-8 d-flex">
                                         <span class="noti-icon">
                                             <img src="assets1/img/icon/3.jpeg" alt="" class="ids-images">
@@ -177,9 +176,9 @@
                                     <div class="col-lg-4" align="right">
                                         <a href="exchange247" class="btn btn-secondary btn-sm btn-orange">Create ID</a>
                                     </div>
-                                </a>
+                                </div>
 
-                                <a class="list-group-item d-flex align-items-center" href="#">
+                                <div class="list-group-item d-flex align-items-center" href="#">
                                     <div class="col-lg-8 d-flex">
                                         <span class="noti-icon">
                                             <img src="assets1/img/icon/4.png" alt="" class="ids-images">
@@ -192,8 +191,8 @@
                                         <a href="silverexch" type="button"
                                             class="btn btn-secondary btn-sm btn-orange">Create ID</a>
                                     </div>
-                                </a>
-                                <a class="list-group-item d-flex align-items-center" href="#">
+                                </div>
+                                <div class="list-group-item d-flex align-items-center" href="#">
                                     <div class="col-lg-8 d-flex">
                                         <span class="noti-icon">
                                             <img src="assets1/img/icon/5.png" alt="" class="ids-images">
@@ -205,9 +204,9 @@
                                     <div class="col-lg-4" align="right">
                                         <a href="lotusbook247" class="btn btn-secondary btn-sm btn-orange">Create ID</a>
                                     </div>
-                                </a>
+                                </div>
 
-                                <a class="list-group-item d-flex align-items-center" href="#">
+                                <div class="list-group-item d-flex align-items-center" href="#">
                                     <div class="col-lg-8 d-flex">
                                         <span class="noti-icon">
                                             <img src="assets1/img/icon/6.jpeg" alt="" class="ids-images">
@@ -219,9 +218,7 @@
                                     <div class="col-lg-4" align="right">
                                         <a href="masterexc" class="btn btn-secondary btn-sm btn-orange">Create ID</a>
                                     </div>
-                                </a>
-
-
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -229,4 +226,4 @@
             </div>
         </div>
     </div>
-    {{-- @include('layouts/footer') --}}
+    @include('layouts/footer')
