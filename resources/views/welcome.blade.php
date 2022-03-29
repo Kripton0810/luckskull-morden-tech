@@ -49,7 +49,7 @@
                                 <p class="text-left">#BeHereOrBeNoWhere</p>
                             </div>
                             <div class="body-text">
-                                <p>Experience the best of all betting and gaming on Octopus Online app. Happy Punting!
+                                <p>Experience the best of all betting and gaming on LuckSkull. Happy Punting!
                                     <!-- <p>We are soon going to launch our ios app, till then you can signup or login through our web app -->
                                 <p><a href="./how-to-install.php" class="text-link">How to Install Guide</a>
                                 </p>
