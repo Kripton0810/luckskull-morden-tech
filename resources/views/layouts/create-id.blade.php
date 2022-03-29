@@ -1,4 +1,15 @@
 @include('layouts/header')
+<style>
+.form-label {
+    margin-bottom: 0.5rem;
+    font-size: 13px;
+}
+
+label {
+    display: inline-block;
+    font-size: 13px;
+}
+</style>
 <div class="page-content-wrapper">
     <div class="container plr-0">
         <div class="full-page full-height" style="    background: #222;">
@@ -48,8 +59,7 @@
                     </div>
                 </div>
 
-                <div class="col-11 col-lg-11 padding-0 mx-auto">
-
+                <div class="col-11 col-lg-11 padding-0 mx-auto" style="width: 95.666667%;">
                     <form id="loginForm" class="form-dark" method="POST" action="{{ route('createfrom') }}">
                         @csrf
                         <div class="mb-3">

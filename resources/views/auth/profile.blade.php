@@ -30,7 +30,7 @@
                     </div>
                 </div>
                 <div class="product-catagories-wrapper py-3">
-                    <div class="container">
+                    <div class="container padding-0">
                         <div class="product-catagory-wrap">
                             <div class="row g-3">
                                 <!-- Single Catagory Card-->

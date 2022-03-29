@@ -11,7 +11,7 @@
                  <li class="active"><a href="home.php"><i class="lni lni-home"></i>Home</a></li>
                  <li><a href="offer.php"><i class="lni lni-offer"></i>Offers</a></li>
                  <li><a href="passbook.php"><i class="lni lni-mastercard"></i>Passbook</a></li>
-                 <li><a href="account-information.php"><i class="lni lni-postcard"></i>ID's</a></li>
+                 <li><a href="{{ url('account-information') }}"><i class="lni lni-postcard"></i>ID's</a></li>
              </ul>
          </div>
      </div>

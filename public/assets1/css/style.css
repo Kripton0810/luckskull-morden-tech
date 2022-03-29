@@ -5054,7 +5054,7 @@ li.suha-dropdown-menu .dropdown-trigger-btn.active i {
 
 .full-page {
   background: #000;
-  padding: 55px 24px 92px 24px;
+  padding: 45px 24px 92px 24px;
   height: 100%;
 }
 
@@ -5094,6 +5094,7 @@ li.suha-dropdown-menu .dropdown-trigger-btn.active i {
 
 }
 
+
 .bg-yellow {
   background: #ff6700;
 }
@@ -5118,7 +5119,7 @@ li.suha-dropdown-menu .dropdown-trigger-btn.active i {
 }
 
 .padding-0 {
-  padding: 0px;
+  padding: 0px!important;
 }
 
 .list-group-item {

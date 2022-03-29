@@ -1,117 +1,155 @@
 @include('layouts/header')
+<style>
+#tsum-tabs label {
+    padding: 6px 16px;
+    width: 49%;
+    margin-top: 11px;
+}
+
+#tsum-tabs section {
+    padding: 0px 0 0;
+}
+</style>
 
 <div class="page-content-wrapper">
     <div class="container plr-0">
         <div class="full-page full-height">
-            <div class="col-md-12 col-lg-12 text-center">
-                <h5 class="text-light fw-100">{{ $name }}</h5>
-                <h6 class="text-light"><img src="https://app.gopunt.com/assets/CountryFlags/India.png"
-                        style="height:30px">&nbsp;&nbsp;+91-{{ $phone }}</h6>
-            </div>
-            <div class="col-md-12 col-lg-12 text-center">
-                <div class="row">
-                    <div class="notification-area pt-3 pb-2">
-                        <div class="list-group">
-                            <div class="col-lg-12 col-md-12">
-                                <a class="list-group-item d-flex align-items-center flip">
-                                    <div class="col-lg-8 d-flex space-between">
-                                        <span>
-                                            <img src="https://api.gopunt.com/uploads/accounts/accImg-1621400719659.png"
-                                                alt="" class="pay-images">
-                                        </span>
-                                        <div class="noti-info">
-                                            <h6 class="mb-0">Bank Transfer</h6><span>Adding Bank Details is
-                                                mandatory for
-                                                processing withdrawals, click to add.</span>
+            <div class="col-md-12 col-lg-12">
+                <div id="tsum-tabs">
+                    <main>
+                        <input id="tab1" type="radio" name="tabs">
+                        <label for="tab1">
+                            Added Account
+                        </label>
+
+                        <input id="tab2" type="radio" name="tabs" checked>
+                        <label for="tab2">
+                            Withdrawal Details
+                        </label>
+
+                        <section id="content1">
+                            <div class="col-md-12 col-lg-12 text-center section-padding-30">
+                                <img src="assets1/img/svg/no-id-img.svg" class="images-width"><br>
+                                <p>You don't have any Account Now.</p>
+                            </div>
+                        </section>
+                        <section id="content2">
+                            <div class="col-md-12 col-lg-12 text-center">
+                                <div class="row">
+                                    <div class="notification-area pt-3 pb-2">
+                                        <div class="list-group">
+                                            <div class="col-lg-12 col-md-12">
+                                                <a class="list-group-item d-flex align-items-center flip">
+                                                    <div class="col-lg-8 d-flex space-between">
+                                                        <span>
+                                                            <img src="https://api.gopunt.com/uploads/accounts/accImg-1621400719659.png"
+                                                                alt="" class="pay-images">
+                                                        </span>
+                                                        <div class="noti-info">
+                                                            <h6 class="mb-0">Bank Transfer</h6><span>Adding Bank Details
+                                                                is
+                                                                mandatory for
+                                                                processing withdrawals, click to add.</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4" align="right">
+                                                        <button class="btn btn-secondary btn-sm btn-orange"
+                                                            data-toggle="modal" data-target="#bankdetail">Add
+                                                            New</button>
+                                                    </div>
+                                                </a>
+                                            </div>
                                         </div>
+
+
+                                        <a class="list-group-item d-flex align-items-center">
+                                            <div class="col-lg-8 d-flex">
+                                                <span class="">
+                                                    <img src="assets/images/payment/paytm.png" alt=""
+                                                        class="pay-images">
+                                                </span>
+                                                <div class="noti-info">
+                                                    <h6 class="m-top-10">Paytm Wallet</h6>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4" align="right">
+                                                <button class="btn btn-secondary btn-sm btn-orange" data-toggle="modal"
+                                                    data-target="#paytmwallet">Add New</button>
+                                            </div>
+                                        </a>
+
+                                        <a class="list-group-item d-flex align-items-center">
+                                            <div class="col-lg-8 d-flex">
+                                                <span class="">
+                                                    <img src="assets/images/payment/google_pay.png" alt=""
+                                                        class="pay-images">
+                                                </span>
+                                                <div class="noti-info">
+                                                    <h6 class="m-top-10">Google Pay</h6>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4" align="right">
+                                                <button class="btn btn-secondary btn-sm btn-orange" data-toggle="modal"
+                                                    data-target="#googlepay">Add New</button>
+                                            </div>
+                                        </a>
+
+                                        <a class="list-group-item d-flex align-items-center">
+                                            <div class="col-lg-8 d-flex">
+                                                <span class="">
+                                                    <img src="assets/images/payment/phone_pe.png" alt=""
+                                                        class="pay-images">
+                                                </span>
+                                                <div class="noti-info">
+                                                    <h6 class="m-top-10">PhonePe</h6>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4" align="right">
+                                                <button class="btn btn-secondary btn-sm btn-orange" data-toggle="modal"
+                                                    data-target="#phonepe">Add New</button>
+                                            </div>
+                                        </a>
+
+                                        <a class="list-group-item d-flex align-items-center">
+                                            <div class="col-lg-8 d-flex">
+                                                <span class="">
+                                                    <img src="assets/images/payment/paytm_upi.png" alt=""
+                                                        class="pay-images">
+                                                </span>
+                                                <div class="noti-info">
+                                                    <h6 class="m-top-10">Paytm UPI</h6>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4" align="right">
+                                                <button class="btn btn-secondary btn-sm btn-orange" data-toggle="modal"
+                                                    data-target="#upino">Add New</button>
+                                            </div>
+                                        </a>
+
+
+                                        <a class="list-group-item d-flex align-items-center">
+                                            <div class="col-lg-8 d-flex">
+                                                <span class="">
+                                                    <img src="assets/images/payment/upi.png" alt="" class="pay-images">
+                                                </span>
+                                                <div class="noti-info">
+                                                    <h6 class="m-top-10">UPI</h6>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4" align="right">
+                                                <button class="btn btn-secondary btn-sm btn-orange" data-toggle="modal"
+                                                    data-target="#upi">Add New</button>
+                                            </div>
+                                        </a>
                                     </div>
-                                    <div class="col-lg-4" align="right">
-                                        <button class="btn btn-secondary btn-sm btn-orange" data-toggle="modal"
-                                            data-target="#bankdetail">Add New</button>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-
-
-                        <a class="list-group-item d-flex align-items-center">
-                            <div class="col-lg-8 d-flex">
-                                <span class="">
-                                    <img src="assets/images/payment/paytm.png" alt="" class="pay-images">
-                                </span>
-                                <div class="noti-info">
-                                    <h6 class="m-top-10">Paytm Wallet</h6>
                                 </div>
                             </div>
-                            <div class="col-lg-4" align="right">
-                                <button class="btn btn-secondary btn-sm btn-orange" data-toggle="modal"
-                                    data-target="#paytmwallet">Add New</button>
-                            </div>
-                        </a>
-
-                        <a class="list-group-item d-flex align-items-center">
-                            <div class="col-lg-8 d-flex">
-                                <span class="">
-                                    <img src="assets/images/payment/google_pay.png" alt="" class="pay-images">
-                                </span>
-                                <div class="noti-info">
-                                    <h6 class="m-top-10">Google Pay</h6>
-                                </div>
-                            </div>
-                            <div class="col-lg-4" align="right">
-                                <button class="btn btn-secondary btn-sm btn-orange" data-toggle="modal"
-                                    data-target="#googlepay">Add New</button>
-                            </div>
-                        </a>
-
-                        <a class="list-group-item d-flex align-items-center">
-                            <div class="col-lg-8 d-flex">
-                                <span class="">
-                                    <img src="assets/images/payment/phone_pe.png" alt="" class="pay-images">
-                                </span>
-                                <div class="noti-info">
-                                    <h6 class="m-top-10">PhonePe</h6>
-                                </div>
-                            </div>
-                            <div class="col-lg-4" align="right">
-                                <button class="btn btn-secondary btn-sm btn-orange" data-toggle="modal"
-                                    data-target="#phonepe">Add New</button>
-                            </div>
-                        </a>
-
-                        <a class="list-group-item d-flex align-items-center">
-                            <div class="col-lg-8 d-flex">
-                                <span class="">
-                                    <img src="assets/images/payment/paytm_upi.png" alt="" class="pay-images">
-                                </span>
-                                <div class="noti-info">
-                                    <h6 class="m-top-10">Paytm UPI</h6>
-                                </div>
-                            </div>
-                            <div class="col-lg-4" align="right">
-                                <button class="btn btn-secondary btn-sm btn-orange" data-toggle="modal"
-                                    data-target="#upino">Add New</button>
-                            </div>
-                        </a>
-
-
-                        <a class="list-group-item d-flex align-items-center">
-                            <div class="col-lg-8 d-flex">
-                                <span class="">
-                                    <img src="assets/images/payment/upi.png" alt="" class="pay-images">
-                                </span>
-                                <div class="noti-info">
-                                    <h6 class="m-top-10">UPI</h6>
-                                </div>
-                            </div>
-                            <div class="col-lg-4" align="right">
-                                <button class="btn btn-secondary btn-sm btn-orange" data-toggle="modal"
-                                    data-target="#upi">Add New</button>
-                            </div>
-                        </a>
-                    </div>
+                        </section>
+                    </main>
                 </div>
             </div>
+
+
         </div>
     </div>
 </div>
