@@ -24,7 +24,8 @@
                                 class="text-white">+91-{{ $phone }}</span>
                         </div>
                         <div class="m-top-10">
-                            <a href="payment-success.php" type="button" class="btn btn-warning ">Change Password</a>
+                            <a href="payment-success.php" type="button" class="btn btn-warning" data-toggle="modal"
+                                data-target="#changepassword">Change Password</a>
                             <p class="text-light m-top-10">Member since {{ $created }}</p>
                         </div>
                     </div>
@@ -51,6 +52,68 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <!-- Add Bank Modal -->
+    <div class="modal" id="changepassword" tabindex="-1" role="dialog" aria-labelledby="changepassword"
+        aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="border-bottom: 1px solid #252425;">
+                    <h5 class="modal-title text-light" id="exampleModalLongTitle">Change Password<br>
+                    </h5><br>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        @csrf
+                        <div class="form-group m-top-10">
+                            <label class="label-m text-light">Old Password*</label>
+                            <div class="col-md-12">
+                                <input id="password-field" type="password" class="form-control" name="password"
+                                    value="secret">
+                                <span toggle="#password-field"
+                                    class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                            </div>
+                        </div>
+                        <div class="form-group m-top-10">
+                        <label class="label-m text-light">New Password*</label>
+                            <div class="col-md-12">
+                                <input id="password-field" type="password" class="form-control" name="password"
+                                    value="secret">
+                                <span toggle="#password-field"
+                                    class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                            </div>
+                        </div>
+                        <div class="form-group m-top-10">
+                        <label class="label-m text-light">Confirm Password*</label>
+                            <div class="col-md-12">
+                                <input id="password-field" type="password" class="form-control" name="password"
+                                    value="secret">
+                                <span toggle="#password-field"
+                                    class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                            </div>
+                        </div>
+                       
+                    </form>
+                </div>
+                <div class="modal-footer text-center" style="border-top: 1px solid #252425;">
+                    <button type="submit" class="btn btn-warning">Submit</button>
+                </div>
+                <br>
             </div>
         </div>
     </div>

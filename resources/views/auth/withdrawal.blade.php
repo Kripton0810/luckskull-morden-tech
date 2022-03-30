@@ -28,9 +28,73 @@
                         </label>
 
                         <section id="content1">
-                            <div class="col-md-12 col-lg-12 text-center section-padding-30">
+                            <!-- <div class="col-md-12 col-lg-12 text-center section-padding-30">
                                 <img src="assets1/img/svg/no-id-img.svg" class="images-width"><br>
                                 <p>You don't have any Account Now.</p>
+                            </div> -->
+                            <div class="row">
+                                <div class="notification-area pt-3 pb-2">
+                                    <div class="list-group">
+                                        <div class="col-md-12 col-lg-12 text-center">
+                                            <div class="card user-info-card">
+                                                <div class="card-body p-4 items-center">
+                                                    <div class="user-info">
+                                                        <h5 class="mb-0 text-white">Shivee</h5>
+                                                        <img src="assets/images/India.png" style="height:20px">&nbsp;
+                                                        <span class="text-white">+91-7992281821</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 m-top-10">
+                                            <div class="list-group-item d-flex align-items-center flip bankcard">
+                                                <div class="col-lg-8 d-flex space-between">
+                                                    <span class="">
+                                                        <img src="assets/images/bank.png" alt="" class="ids-images">
+                                                    </span>
+                                                    <div class="noti-info">
+                                                        <h6 class="m-top-10">Bank Details</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4" align="right">
+                                                    <a href="#" class="btn btn-secondary btn-sm btn-orange"><i
+                                                            class="fa fa-eye" aria-hid--den="true"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="panel">
+                                                <div class="col-md-12 col-lg-12">
+                                                    <div class="card user-data-card bg-black">
+                                                        <div class="card-body">
+                                                            <div
+                                                                class="list-group-item d-flex align-items-center bankcard">
+                                                                <div class="col-lg-8 d-flex space-between">
+                                                                    <span class="">
+                                                                        <img src="https://api.gopunt.com/uploads/bank/Andhra_Bank.png" alt=""
+                                                                            class="ids-images">
+                                                                    </span>
+                                                                    <div class="noti-info">
+                                                                        <h6 class="m-top-10">Andhra Bank</h6>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-4" align="right">
+                                                                    <a href="#"
+                                                                        class="btn btn-secondary btn-sm btn-orange" data-toggle="modal" data-target="#Addbankdetail">Edit</a>
+                                                                </div>
+                                                            </div>
+                                                            <hr>
+                                                            <div
+                                                                class="single-profile-data align-items-center justify-content-between">
+                                                                <button class="btn btn-secondary btn-sm btn-orange"  data-toggle="modal" data-target="#bankdetail">Add New</button>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </section>
                         <section id="content2">
@@ -360,6 +424,72 @@
                         <button type="submit" class="btn btn-warning">Submit</button>
                     </div>
                 </form>
+            </div>
+            <br>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Add Bank Modal -->
+<div class="modal fade" id="Addbankdetail" tabindex="-1" role="dialog" aria-labelledby="bankdetailTitle"
+    aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="border-bottom: 1px solid #252425;">
+                <h5 class="modal-title text-light" id="exampleModalLongTitle">Edit Your Bank Account<br>
+                    <p class="text-light fw-100">Editing Bank Details is mandatory for processing withdrawals.</p>
+                </h5><br>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    @csrf
+                    <div class="form-group">
+                        <label class="label-m text-light">Bank Name*</label>
+                        <select class="form-control">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="form-group m-top-10">
+                        <label class="label-m text-light">Account Number*</label>
+                        <input type="text" class="form-control" readonly placeholder="7765 6654 6666 8888">
+                    </div>
+                    <div class="form-group m-top-10">
+                        <label class="label-m text-light">IFSC*</label>
+                        <input type="text" class="form-control" placeholder="ABGJ7678686">
+                    </div>
+
+                    <div class="form-group m-top-10">
+                        <label class="label-m text-light">Account Holder Name*</label>
+                        <input type="text" class="form-control" placeholder="Shivee Raj">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer text-center" style="border-top: 1px solid #252425;">
+                <button type="submit" class="btn btn-warning">Submit</button>
+                <button type="button" class="btn btn-warning">Cancel</button>
+
             </div>
             <br>
         </div>

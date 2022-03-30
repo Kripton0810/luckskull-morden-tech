@@ -25,6 +25,7 @@
         align-items: center;
         max-width: 1024px;
     }
+
 </style>
 
 <body class="scroll-none">
@@ -53,8 +54,7 @@
                                     <!-- <p>We are soon going to launch our ios app, till then you can signup or login through our web app -->
                                 <p><a href="./how-to-install.php" class="text-link">How to Install Guide</a>
                                 </p>
-                                <p>For Support <a class="yellow-color"
-                                        href="">Click
+                                <p>For Support <a class="yellow-color" href="">Click
                                         Here</a></p>
 
                             </div>
@@ -69,8 +69,9 @@
                 <div class="col-12 col-lg-8">
                     <div class="action-btn">
                         <!-- https://app.gopunt.com -->
-                        <a href="{{ route('login')}}" class="download-link install-link">
-                            <p class="link-text">WebApp <br /> <span>Supports Windows, Mac, iPhone, iPad.</span></p>
+                        <a href="{{ route('dashboard') }}" class="download-link install-link">
+                            <p class="link-text">WebApp <br /> <span>Supports Windows, Mac, iPhone, iPad.</span>
+                            </p>
                         </a>
                         <a href="#" class="download-link">
                             <!-- <span class="android-icon"></span> -->
@@ -102,7 +103,7 @@
 <script async src="https://gopunt.com/dist/js/gopunt-conv.js"></script>
 <script>
     var toastElList = [].slice.call(document.querySelectorAll('.toast'))
-    var toastList = toastElList.map(function (toastEl) {
+    var toastList = toastElList.map(function(toastEl) {
         return new bootstrap.Toast(toastEl, option)
     })
 </script>
