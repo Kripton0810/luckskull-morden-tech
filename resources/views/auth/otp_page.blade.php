@@ -46,7 +46,7 @@
                             <div class="col-sm-12 col-lg-10 mx-auto">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
-                                        <a href="userlogin.php">
+                                        <a href="dashboard">
                                             <li class="breadcrumb-item active page-heading" aria-current="page"><i
                                                     class="fa fa-arrow-circle-o-left yellow-text"
                                                     aria-hidden="true"></i>&nbsp;&nbsp;ENTER
@@ -54,11 +54,11 @@
                                         </a>
                                     </ol>
                                 </nav>
-                                <p class="text-center"><img class="img-fluid" src="assets/images/verification.png"
-                                        alt="verification"></p>
+                                <p class="text-center"><img class="img-fluid"
+                                        src="assets/images/verification.png" alt="verification"></p>
                                 <p class="text-white-50 text-center mb-4">Please enter the OTP (one time password) to
-                                    verify your account. A Code has been sent to <span
-                                        class="text-light">phone number</span></p>
+                                    verify your account. A Code has been sent to <span class="text-light">phone
+                                        number</span></p>
                                 <form id="otp-screen" class="form-dark" method="post">
                                     <label class="form-label text-light mb-3">Enter 4 digit code</label>
                                     <div class="row g-3">

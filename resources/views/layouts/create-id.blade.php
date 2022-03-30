@@ -1,14 +1,15 @@
 @include('layouts/header')
 <style>
-.form-label {
-    margin-bottom: 0.5rem;
-    font-size: 13px;
-}
+    .form-label {
+        margin-bottom: 0.5rem;
+        font-size: 13px;
+    }
 
-label {
-    display: inline-block;
-    font-size: 13px;
-}
+    label {
+        display: inline-block;
+        font-size: 13px;
+    }
+
 </style>
 <div class="page-content-wrapper">
     <div class="container plr-0">
@@ -20,7 +21,7 @@ label {
             </div>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <a href="userlogin.php">
+                    <a href="dashboard">
                         <li class="breadcrumb-item active page-heading" aria-current="page">
                             &nbsp;&nbsp; ID Details
                         </li>

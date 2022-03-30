@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\Auth\AuthenticatedSessionController;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Auth\OfferController;
+use App\Http\Controllers\Auth\PassbookController;
 // use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\NotificationController;
@@ -63,6 +65,8 @@ Route::get('masterexc', [LoginController::class, 'masterexc'])->name('create-id'
 
 Route::get('payment-request', [PaymentController::class, 'index'])->name('payment-request');
 Route::get('payment', [PaymentController::class, 'create'])->name('payment');
+Route::get('passbook', [PassbookController::class,'index'])->name('passbook');
+Route::get('offer', [OfferController::class,'index'])->name('offers');
 
 
 Route::get('userlogin', [LoginController::class, 'getlogin'])->name('userlogin');
