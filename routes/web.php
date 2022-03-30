@@ -98,7 +98,13 @@ Route::post('withdrawupi', [ PaymentController::class, 'withdrawupi' ]);
 
 Route::post('image-upload', [ ImageUploadController::class, 'imageUploadPost' ])->name('image.upload.post');
 
+
+Route::get('/notification',function(){
+    return view('auth.notification');
+});
+
 // admin routes
+
 
 Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
         Route::namespace('Auth')->middleware('guest:admin')->group(function(){
@@ -115,7 +121,5 @@ Route::middleware('admin')->group(function(){
 });
 Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 // Route::get('send-sms-notification', [LoginController::class, 'sendSmsNotificaition']);
-
-
 
 });
