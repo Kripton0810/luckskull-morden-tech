@@ -26,15 +26,9 @@ class LoginController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        if (Session::get('phone')==null) {
-            # code...
-        return view('auth.login');
-        }else
-        {
-            return redirect('dashboard');
-        }
-
+    {   
+            return view('auth.login');
+    
     }
     public function formid()
     {
@@ -175,6 +169,8 @@ class LoginController extends Controller
     {
         // dd($request->all());
         $otp = rand(1000, 9999);
+        Session::put('otp',$otp);
+
         $request['body']="hi luckskull varification code is:".$otp;
 
         $validatedData = $request->validate([
@@ -247,11 +243,18 @@ class LoginController extends Controller
     
     public function varify_otp(Request $request)
     {
-        $users = User::where('otp', $request->otp)->get();
-        Session::put('phone',$request->phone_number);
-        if(sizeof($users) > 0){
+        $otp=$request->fil1.''.$request->fil2.''.$request->fil3 .''.$request->fil4;
+        $phone = Session::get('phone');
+        $userRecord = varifyotp::where('phone_number', '=', $phone)->where('otp', '=', $otp)->get();
+       
+        // if(sizeof($userRecord) > 0){
+        //     $deotp = varifyotp::where('phone_number', '=', $phone)->where('otp', '=', $otp)->first();
+        //     $deotp->delete();
+        //     return redirect()->route('dashboard');
+        // }else{
 
-            return redirect()->route('userlogin');
-        }
+        //     return redirect()->route('otp-login');
+
+        // }  
     }
 }

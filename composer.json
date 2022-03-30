@@ -62,7 +62,8 @@
         "preferred-install": "dist",
         "sort-packages": true,
         "allow-plugins": {
-            "composer/package-versions-deprecated": true
+            "composer/package-versions-deprecated": true,
+            "kylekatarnls/update-helper": true
         }
     },
     "minimum-stability": "dev",
