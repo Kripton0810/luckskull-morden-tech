@@ -7,6 +7,7 @@ use App\Http\Requests\Auth\AdminLoginRequest;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -44,8 +45,9 @@ class AuthenticatedSessionController extends Controller
      */
     public function destroy(Request $request)
     {
-        Auth::guard('admin')->logout();
 
+        Auth::guard('admin')->logout();
+        Session::flush();
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();

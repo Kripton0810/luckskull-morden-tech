@@ -15,6 +15,8 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\otpvarifyController;
+use Illuminate\Support\Facades\Log;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,10 +29,12 @@ use App\Http\Controllers\otpvarifyController;
 */
 
 Route::get('/', function () {
+    Session::flush();
     return view('welcome');
 });
 
 Route::get('/dashboard', function () {
+    Log::debug('from web dashboard '.Session::get('phone'));
     if (Session::get('phone')!=null) {
         # code...
         return view('dashboard');
@@ -39,7 +43,7 @@ Route::get('/dashboard', function () {
     {
         return redirect('login');
     }
-})->middleware(['auth'])->name('dashboard');
+})->name('dashboard');
 
 require __DIR__.'/auth.php';
 
@@ -72,6 +76,7 @@ Route::get('offer', [OfferController::class,'index'])->name('offers');
 Route::get('userlogin', [LoginController::class, 'getlogin'])->name('userlogin');
 Route::post('userloginform', [LoginController::class, 'login'])->name('userloginform');
 
+// Route::get('otp-login-user', [otpvarifyController::class, 'sendCustomMessage'])->name('otp-login-user');
 Route::get('otp-login', [otpvarifyController::class, 'index'])->name('otp-login');
 Route::get('varify', [otpvarifyController::class, 'varify_otp'])->name('varify');
 
