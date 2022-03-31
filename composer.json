@@ -15,7 +15,11 @@
         "laravel/vonage-notification-channel": "^2.5",
         "seshac/otp-generator": "^0.0.7",
         "twilio/sdk": "^6.35",
-        "vonage/client": "^2.1"
+        "vonage/client": "^2.1",
+        "infyomlabs/laravel-generator": "^3.0",
+        "laravelcollective/html": "^6.2",
+        "infyomlabs/adminlte-templates": "^3.0",
+        "doctrine/dbal": "~2.3"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
