@@ -57,7 +57,7 @@ class RegisteredUserController extends Controller
         event(new Registered($user));
 
         Auth::login($user);
-        $this->sendCustomMessage($request);
+        // $this->sendCustomMessage($request);
         return redirect(RouteServiceProvider::HOME);
     }
 
@@ -75,19 +75,20 @@ class RegisteredUserController extends Controller
         $recipients = '+91'.$validatedData["phone_number"];
         // iterate over the array of recipients and send a twilio request for each
         // foreach ($recipients as $recipient) {
-            $this->sendMessage($validatedData["body"], $recipients);
+            // $this->sendMessage($validatedData["body"], $recipients);
         // }
-        return back()->with(['success' => "Messages on their way!"]);
+        return redirect()->intended('dashboard');
+        // return back()->with(['success' => "Messages on their way!"]);
     }
 
-    private function sendMessage($message, $recipients)
-    {
-        app()->environment();
-        $account_sid = getenv("TWILIO_SID");
-        $auth_token = getenv("TWILIO_AUTH_TOKEN");
-        $twilio_number = getenv("TWILIO_NUMBER");
-        $client = new Client($account_sid, $auth_token);
-        $client->messages->create($recipients, ['from' => $twilio_number, 'body' => $message]);
+    // private function sendMessage($message, $recipients)
+    // {
+    //     app()->environment();
+    //     $account_sid = getenv("TWILIO_SID");
+    //     $auth_token = getenv("TWILIO_AUTH_TOKEN");
+    //     $twilio_number = getenv("TWILIO_NUMBER");
+    //     $client = new Client($account_sid, $auth_token);
+    //     $client->messages->create($recipients, ['from' => $twilio_number, 'body' => $message]);
 
-    }
+    // }
 }
