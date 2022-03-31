@@ -37,7 +37,7 @@ class otpvarifyController extends Controller
     {
         $otp=$request->fil1.''.$request->fil2.''.$request->fil3 .''.$request->fil4;
         $users = varifyotp::where('otp', $otp)->get();
-        print_r($users);die;
+        // print_r($users);die;
 
         if(sizeof($users) > 0){
 
