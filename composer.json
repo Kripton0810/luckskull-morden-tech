@@ -15,7 +15,7 @@
         "laravel/vonage-notification-channel": "^2.5",
         "seshac/otp-generator": "^0.0.7",
         "twilio/sdk": "^6.35",
-        "vonage/client": "^2.1"
+        "vonage/client": "*"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

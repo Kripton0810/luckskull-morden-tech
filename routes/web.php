@@ -103,6 +103,9 @@ Route::get('/notification',function(){
     return view('auth.notification');
 });
 
+
+Route::get('send-sms-notification', [NotificationController::class, 'sendSmsNotificaition']);
+
 // admin routes
 
 
