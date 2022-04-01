@@ -48,20 +48,6 @@ class RegisteredUserController extends Controller
         Session::put('phone_number',$request->phone_number);
         Session::put('password',$request->password);
         Session::put('refferral_code',$request->refferral_code);
-        // echo "<pre>";
-        // print_r($request->all());
-
-        // $user = User::create([
-        //     'name' => $request->name,
-        //     'phone_number' => $request->phone_number,
-        //     'password' => Hash::make($request->password),
-        //     'refferral_code' => $request->refferral_code,
-        // ]);
-
-        // event(new Registered($user));
-
-        // Auth::login($user);
-        // $this->sendCustomMessage($request);
         return redirect()->route('otp-login');
     }
 
@@ -95,20 +81,4 @@ class RegisteredUserController extends Controller
     //     $client->messages->create($recipients, ['from' => $twilio_number, 'body' => $message]);
 
     // }
-    public function sendMessage($message, $recipients)
-    {
-        $basic  = new \Vonage\Client\Credentials\Basic('66ca4a20', 'EyNSLAtgHyWIlWA5');
-        $client = new \Vonage\Client(new \Vonage\Client\Credentials\Container($basic));
-        $response = $client->sms()->send(
-            new \Vonage\SMS\Message\SMS($recipients, "LuckSkull", $message)
-        );
-
-        $message = $response->current();
-
-        if ($message->getStatus() == 0) {
-            echo "The message was sent successfully\n";
-        } else {
-            echo "The message failed with status: " . $message->getStatus() . "\n";
-        }
-    }
 }

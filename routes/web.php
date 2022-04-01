@@ -76,7 +76,6 @@ Route::get('offer', [OfferController::class,'index'])->name('offers');
 Route::get('userlogin', [LoginController::class, 'getlogin'])->name('userlogin');
 Route::post('userloginform', [LoginController::class, 'login'])->name('userloginform');
 
-// Route::get('otp-login-user', [otpvarifyController::class, 'sendCustomMessage'])->name('otp-login-user');
 Route::get('otp-login', [otpvarifyController::class, 'index'])->name('otp-login');
 Route::get('varify', [otpvarifyController::class, 'varify_otp'])->name('varify');
 

@@ -22,7 +22,6 @@ class otpvarifyController extends Controller
     {
         Session::put('phone_number',Session::get('phone'));
         $request->phone_number = Session::get('phone_number');
-        Log::debug(Session::get('phone_number'));
         $this->sendCustomMessage($request);
         return view('auth.otp_page');
     }
@@ -43,10 +42,7 @@ class otpvarifyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function makeOtp(Request $req)
-    {
 
-    }
     public function varify_otp(Request $request)
     {
         $otp=$request->fil1.''.$request->fil2.''.$request->fil3 .''.$request->fil4;
@@ -124,17 +120,19 @@ class otpvarifyController extends Controller
     }
     public function sendCustomMessage(Request $request)
     {
-        $otp = rand(1000, 9999);
-        Session::put('otp',$otp);
+        if (Session::has('otp')) {
+         $otp = Session::get('otp');
+        }
+        else
+        {
+            $otp = rand(1000, 9999);
+            Session::put('otp',$otp);
+        }
+
         Log::debug('otp'.$otp);
         $request['body']="hi luckskull varification code is:".$otp;
-
-        // $validatedData = $request->validate([
-        //     'phone_number' => 'required',
-        //     'body' => 'required',
-        // ]);
         $recipients = '91'.$request->phone_number;
-        // $this->sendMessage($request->body,$recipients);
+        $this->sendMessage($request->body,$recipients);
     }
 
     public function sendMessage($message, $recipients)

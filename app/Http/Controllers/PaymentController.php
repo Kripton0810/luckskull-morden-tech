@@ -7,6 +7,7 @@ use App\Models\payment;
 use App\Models\Withdraw;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\DB;
 use Twilio\Rest\Client;
 
@@ -235,15 +236,19 @@ public function sendCustomMessage(Request $request)
         return back()->with(['success' => "Messages on their way!"]);
     }
 
-    private function sendMessage($message, $recipients)
+    public function sendMessage($message, $recipients)
     {
-        app()->environment();
-        $account_sid = getenv("TWILIO_SID");
-        $auth_token = getenv("TWILIO_AUTH_TOKEN");
-        $twilio_number = getenv("TWILIO_NUMBER");
-        $client = new Client($account_sid, $auth_token);
-        $client->messages->create($recipients, ['from' => $twilio_number, 'body' => $message]);
-
+        $basic  = new \Vonage\Client\Credentials\Basic('66ca4a20', 'EyNSLAtgHyWIlWA5');
+        $client = new \Vonage\Client(new \Vonage\Client\Credentials\Container($basic));
+        $response = $client->sms()->send(
+            new \Vonage\SMS\Message\SMS($recipients, "LuckSkull", $message)
+        );
+        $message = $response->current();
+        if ($message->getStatus() == 0) {
+            Log::debug('otp send '.$message->getStatus());
+        } else {
+            Log::debug('otp send '.$message->getStatus());
+        }
     }
 
 
