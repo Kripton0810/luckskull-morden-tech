@@ -26,48 +26,87 @@ class LoginController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
+    {
             return view('auth.login');
-    
+
     }
     public function formid()
     {
-        return view('auth.account-information');
+        $data = [
+            [
+                "id"=>"1",
+                "name"=>"Fairexch9",
+                "url"=>"fairexch9.com",
+                "image"=>"https://api.gopunt.com/uploads/accounts/accImg-1621400719659.png"
+            ],
+            [
+                "id"=>"2",
+                "name"=>"Go Exchange 247",
+                "url"=>"goexch247.com",
+                "image"=>"https://goexch.com/assets/images/goexch-white.png"
+            ],
+            [
+                "id"=>"3",
+                "name"=>"Silver Exch",
+                "url"=>"silverexch.com",
+                "image"=>"https://silver-exch.com/api/upload/image/Silver.png"
+            ],
+            [
+                "id"=>"4",
+                "name"=>"Lotus Book 247",
+                "url"=>"lotusbook247.com",
+                "image"=>"https://lotusbook247.games/d/lotus2803474ea9d5fbf0eb24dd962ce55923.png"
+            ],
+
+            [
+                "id"=>"5",
+                "name"=>"Exch247",
+                "url"=>"exch247.com",
+                "image"=>"https://exch247.com/d/exch247f6e078e4ea0dd55e822681e4a674e526.png"
+            ],
+        ];
+        return view('auth.account-information',['content' => $data]);
 
     }
-    public function createidFairexch9()
+    public function id_maker(Request $req)
     {
+        $data = [
+            [
+                "id"=>"1",
+                "name"=>"Fairexch9",
+                "url"=>"fairexch9.com",
+                "image"=>"https://api.gopunt.com/uploads/accounts/accImg-1621400719659.png"
+            ],
+            [
+                "id"=>"2",
+                "name"=>"Go Exchange 247",
+                "url"=>"goexch247.com",
+                "image"=>"https://goexch.com/assets/images/goexch-white.png"
+            ],
+            [
+                "id"=>"3",
+                "name"=>"Silver Exch",
+                "url"=>"silverexch.com",
+                "image"=>"https://silver-exch.com/api/upload/image/Silver.png"
+            ],
+            [
+                "id"=>"4",
+                "name"=>"Lotus Book 247",
+                "url"=>"lotusbook247.com",
+                "image"=>"https://lotusbook247.games/d/lotus2803474ea9d5fbf0eb24dd962ce55923.png"
+            ],
+
+            [
+                "id"=>"5",
+                "name"=>"Exch247",
+                "url"=>"exch247.com",
+                "image"=>"https://exch247.com/d/exch247f6e078e4ea0dd55e822681e4a674e526.png"
+            ],
+        ];
+        $d = $data[($req->id)-1];
         Session::put('web','fairexch9.com');
-        return view('layouts.create-id');
-    }
+        return view('layouts.create-id',['cont'=>$d]);
 
-    public function goexchange247()
-    {
-        Session::put('web','goexch247.com');
-        return view('layouts.create-id');
-    }
-
-    public function exchange247()
-    {
-        Session::put('web','exch247.com');
-        return view('layouts.create-id');
-    }
-
-    public function silverexch()
-    {
-        Session::put('web','silverexch.com');
-        return view('layouts.create-id');
-    }
-
-    public function lotusbook247()
-    {
-        Session::put('web','lotusbook247.com');
-        return view('layouts.create-id');
-    }
-    public function masterexc()
-    {
-        Session::put('web','masterexch.com');
-        return view('layouts.create-id');
     }
     public function getlogin()
     {
@@ -240,13 +279,13 @@ class LoginController extends Controller
     {
         //
     }
-    
+
     public function varify_otp(Request $request)
     {
         $otp=$request->fil1.''.$request->fil2.''.$request->fil3 .''.$request->fil4;
         $phone = Session::get('phone');
         $userRecord = varifyotp::where('phone_number', '=', $phone)->where('otp', '=', $otp)->get();
-       
+
         // if(sizeof($userRecord) > 0){
         //     $deotp = varifyotp::where('phone_number', '=', $phone)->where('otp', '=', $otp)->first();
         //     $deotp->delete();
@@ -255,6 +294,6 @@ class LoginController extends Controller
 
         //     return redirect()->route('otp-login');
 
-        // }  
+        // }
     }
 }

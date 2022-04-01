@@ -66,6 +66,7 @@ Route::get('silverexch', [LoginController::class, 'silverexch'])->name('create-i
 Route::get('lotusbook247', [LoginController::class, 'lotusbook247'])->name('create-id');
 Route::get('masterexc', [LoginController::class, 'masterexc'])->name('create-id');
 
+Route::get('id-maker',[LoginController::class,'id_maker']);
 
 Route::get('payment-request', [PaymentController::class, 'index'])->name('payment-request');
 Route::get('payment', [PaymentController::class, 'create'])->name('payment');

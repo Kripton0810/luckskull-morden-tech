@@ -15,9 +15,9 @@
     <div class="container plr-0">
         <div class="full-page full-height" style="    background: #222;">
             <div class="col-md-12 col-lg-12 text-center">
-                <img src="https://api.gopunt.com/uploads/accounts/accImg-1617381060032.png" style="height:40px">
-                <h5 class="text-light">Go Exchange 9<h5>
-                        <h6 class="text-light">goexch9.com</h6>
+                <img src="{{ $cont['image'] }}" style="height:40px">
+                <h5 class="text-light">{{ $cont['name'] }}<h5>
+                        <h6 class="text-light">{{ $cont['url'] }}</h6>
             </div>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">

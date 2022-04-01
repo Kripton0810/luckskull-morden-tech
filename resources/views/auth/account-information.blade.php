@@ -1,14 +1,15 @@
 @include('layouts/header')
 <style>
-#tsum-tabs label {
-    padding: 6px 16px;
-    width: 49%;
-    margin-top: 11px;
-}
+    #tsum-tabs label {
+        padding: 6px 16px;
+        width: 49%;
+        margin-top: 11px;
+    }
 
-#tsum-tabs section {
-    padding: 0px 0 0;
-}
+    #tsum-tabs section {
+        padding: 0px 0 0;
+    }
+
 </style>
 <div class="page-content-wrapper">
     <div class="container plr-0">
@@ -38,23 +39,7 @@
                                     <div class="notification-area pt-3 pb-2">
                                         <div class="list-group">
                                             <div class="col-lg-12 col-md-12">
-                                                <div class="list-group-item d-flex align-items-center flip">
-                                                    <div class="col-lg-8 d-flex space-between">
-                                                        <span class="noti-icon">
-                                                            <img src="https://api.gopunt.com/uploads/accounts/accImg-1621400719659.png"
-                                                                alt="" class="ids-images">
-                                                        </span>
-                                                        <div class="noti-info">
-                                                            <h6 class="mb-0">Fairexch9</h6><span>fairexch9.com</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-4" align="right">
-                                                        <a href="createidFairexch9"
-                                                            class="btn btn-secondary btn-sm btn-orange">Create
-                                                            ID</a>
-                                                    </div>
-                                                </div>
-                                                <div class="panel">
+                                                {{-- <div class="panel">
                                                     <div class="col-lg-12 col-md-12">
                                                         <span> <img src="assets1/img/svg/active-football.svg"
                                                                 style="height:13px"></span>
@@ -94,7 +79,8 @@
                                                                     class="single-profile-data d-flex align-items-center justify-content-between">
                                                                     <div class="title d-flex align-items-center">
                                                                         <span>Demo
-                                                                            Password</span></div>
+                                                                            Password</span>
+                                                                    </div>
                                                                     <div class="data-content">Demo1234</div>
                                                                 </div>
                                                             </div>
@@ -104,7 +90,8 @@
                                                                         class="single-profile-data d-flex align-items-center justify-content-between">
                                                                         <div class="title d-flex align-items-center">
                                                                             <span>Min
-                                                                                Bet</span></div>
+                                                                                Bet</span>
+                                                                        </div>
                                                                         <div class="data-content"><i
                                                                                 class="lni lni-coin"></i></div>
                                                                     </div>
@@ -181,88 +168,31 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-
-                                                <div class="list-group-item d-flex align-items-center">
-                                                    <div class="col-lg-8 d-flex">
-                                                        <span class="noti-icon">
-                                                            <img src="assets1/img/icon/2.png" alt="" class="ids-images">
-                                                        </span>
-                                                        <div class="noti-info">
-                                                            <h6 class="mb-0">Go Exchange 247</h6>
-                                                            <span>goexch247.com</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-4" align="right">
-                                                        <a href="goexchange247"
-                                                            class="btn btn-secondary btn-sm btn-orange">Create
-                                                            ID</a>
-                                                    </div>
-                                                </div>
+                                                </div> --}}
 
 
-                                                <div class="list-group-item d-flex align-items-center" href="#">
-                                                    <div class="col-lg-8 d-flex">
-                                                        <span class="noti-icon">
-                                                            <img src="assets1/img/icon/3.jpeg" alt=""
-                                                                class="ids-images">
-                                                        </span>
-                                                        <div class="noti-info">
-                                                            <h6 class="mb-0">Exchange 247</h6><span>exch247.com</span>
+                                                @foreach ($content as $data)
+                                                    <div class="list-group-item d-flex align-items-center" href="#">
+                                                        <div class="col-lg-8 d-flex">
+                                                            <span class="noti-icon">
+                                                                <img src="{{ $data['image'] }}" alt=""
+                                                                    class="ids-images">
+                                                            </span>
+                                                            <div class="noti-info">
+                                                                <h6 class="mb-0">{{ $data['name'] }}</h6>
+                                                                <span>{{ $data['url'] }}</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4" align="right">
+                                                            <a href="id-maker?id={{ $data['id'] }}" type="button"
+                                                                class="btn btn-secondary btn-sm btn-orange">Create
+                                                                ID</a>
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-4" align="right">
-                                                        <a href="exchange247"
-                                                            class="btn btn-secondary btn-sm btn-orange">Create ID</a>
-                                                    </div>
-                                                </div>
+                                                @endforeach
 
-                                                <div class="list-group-item d-flex align-items-center" href="#">
-                                                    <div class="col-lg-8 d-flex">
-                                                        <span class="noti-icon">
-                                                            <img src="assets1/img/icon/4.png" alt="" class="ids-images">
-                                                        </span>
-                                                        <div class="noti-info">
-                                                            <h6 class="mb-0">Silver Exch</h6><span>silverexch.com</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-4" align="right">
-                                                        <a href="silverexch" type="button"
-                                                            class="btn btn-secondary btn-sm btn-orange">Create ID</a>
-                                                    </div>
-                                                </div>
-                                                <div class="list-group-item d-flex align-items-center" href="#">
-                                                    <div class="col-lg-8 d-flex">
-                                                        <span class="noti-icon">
-                                                            <img src="assets1/img/icon/5.png" alt="" class="ids-images">
-                                                        </span>
-                                                        <div class="noti-info">
-                                                            <h6 class="mb-0">Lotus Book 247</h6>
-                                                            <span>lotusbook247.com</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-4" align="right">
-                                                        <a href="lotusbook247"
-                                                            class="btn btn-secondary btn-sm btn-orange">Create ID</a>
-                                                    </div>
-                                                </div>
 
-                                                <div class="list-group-item d-flex align-items-center" href="#">
-                                                    <div class="col-lg-8 d-flex">
-                                                        <span class="noti-icon">
-                                                            <img src="assets1/img/icon/6.jpeg" alt=""
-                                                                class="ids-images">
-                                                        </span>
-                                                        <div class="noti-info">
-                                                            <h6 class="mb-0">Master Exchange</h6>
-                                                            <span>masterexch.com</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-4" align="right">
-                                                        <a href="masterexc"
-                                                            class="btn btn-secondary btn-sm btn-orange">Create ID</a>
-                                                    </div>
-                                                </div>
+
                                             </div>
                                         </div>
                                     </div>

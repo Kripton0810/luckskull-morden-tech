@@ -1,14 +1,15 @@
 @include('layouts/header')
 <style>
-#tsum-tabs label {
-    padding: 6px 16px;
-    width: 49%;
-    margin-top: 11px;
-}
+    #tsum-tabs label {
+        padding: 6px 16px;
+        width: 49%;
+        margin-top: 11px;
+    }
 
-#tsum-tabs section {
-    padding: 0px 0 0;
-}
+    #tsum-tabs section {
+        padding: 0px 0 0;
+    }
+
 </style>
 
 <div class="page-content-wrapper">
@@ -41,7 +42,8 @@
                                                     <div class="user-info">
                                                         <h5 class="mb-0 text-white">Shivee</h5>
                                                         <img src="assets/images/India.png" style="height:20px">&nbsp;
-                                                        <span class="text-white">+91-7992281821</span>
+                                                        <span
+                                                            class="text-white">+91-{{ Session::get('phone') }}</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -69,8 +71,8 @@
                                                                 class="list-group-item d-flex align-items-center bankcard">
                                                                 <div class="col-lg-8 d-flex space-between">
                                                                     <span class="">
-                                                                        <img src="https://api.gopunt.com/uploads/bank/Andhra_Bank.png" alt=""
-                                                                            class="ids-images">
+                                                                        <img src="https://api.gopunt.com/uploads/bank/Andhra_Bank.png"
+                                                                            alt="" class="ids-images">
                                                                     </span>
                                                                     <div class="noti-info">
                                                                         <h6 class="m-top-10">Andhra Bank</h6>
@@ -78,13 +80,17 @@
                                                                 </div>
                                                                 <div class="col-lg-4" align="right">
                                                                     <a href="#"
-                                                                        class="btn btn-secondary btn-sm btn-orange" data-toggle="modal" data-target="#Addbankdetail">Edit</a>
+                                                                        class="btn btn-secondary btn-sm btn-orange"
+                                                                        data-toggle="modal"
+                                                                        data-target="#Addbankdetail">Edit</a>
                                                                 </div>
                                                             </div>
                                                             <hr>
                                                             <div
                                                                 class="single-profile-data align-items-center justify-content-between">
-                                                                <button class="btn btn-secondary btn-sm btn-orange"  data-toggle="modal" data-target="#bankdetail">Add New</button>
+                                                                <button class="btn btn-secondary btn-sm btn-orange"
+                                                                    data-toggle="modal" data-target="#bankdetail">Add
+                                                                    New</button>
                                                             </div>
                                                         </div>
 
@@ -110,7 +116,8 @@
                                                                 alt="" class="pay-images">
                                                         </span>
                                                         <div class="noti-info">
-                                                            <h6 class="mb-0">Bank Transfer</h6><span>Adding Bank Details
+                                                            <h6 class="mb-0">Bank Transfer</h6><span>Adding
+                                                                Bank Details
                                                                 is
                                                                 mandatory for
                                                                 processing withdrawals, click to add.</span>
@@ -194,7 +201,8 @@
                                         <a class="list-group-item d-flex align-items-center">
                                             <div class="col-lg-8 d-flex">
                                                 <span class="">
-                                                    <img src="assets/images/payment/upi.png" alt="" class="pay-images">
+                                                    <img src="assets/images/payment/upi.png" alt=""
+                                                        class="pay-images">
                                                 </span>
                                                 <div class="noti-info">
                                                     <h6 class="m-top-10">UPI</h6>
