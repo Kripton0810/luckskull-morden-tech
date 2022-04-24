@@ -17,7 +17,8 @@ class registeruser extends Model
         'name',
         'phone_number',
         'password',
-        'refferral_code'
+        'refferral_code',
+        'status'
     ];
 
 }

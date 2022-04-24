@@ -20,6 +20,7 @@ class CreateCreateIdsTable extends Migration
             $table->string('siteurl');
             $table->string('userphone');
             $table->string('userid');
+            $table->string('password');
             $table->double('amount');
             $table->timestamps();
         });

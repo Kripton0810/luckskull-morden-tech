@@ -25,6 +25,7 @@ $app = new Illuminate\Foundation\Application(
 | incoming requests to this application from both the web and CLI.
 |
 */
+$app->bind('path.public', function() { return base_path().'/public_html'; });
 
 $app->singleton(
     Illuminate\Contracts\Http\Kernel::class,
@@ -51,5 +52,6 @@ $app->singleton(
 | from the actual running of the application and sending responses.
 |
 */
+
 
 return $app;
