@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('refferral_code')->nullable();
             $table->string('password');
             $table->boolean('status')->default(0);
+            $table->boolean('coins')->default(0);
             $table->string('phone_number')->nullable();
             $table->rememberToken();
             $table->timestamps();

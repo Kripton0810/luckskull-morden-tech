@@ -22,6 +22,7 @@ class CreateCreateIdsTable extends Migration
             $table->string('userid');
             $table->string('password');
             $table->double('amount');
+            $table->integer('status');
             $table->timestamps();
         });
     }

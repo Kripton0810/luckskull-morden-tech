@@ -42,3 +42,28 @@ Route::delete('delete-website/{id}',[Websites::class,'delete']);
 Route::get('website',[Websites::class,'showAll']);
 
 Route::get('website/{id}',[Websites::class,'findOne']);
+
+Route::get('create-id-notvisited',[CreateID::class,'notVisited']);
+
+Route::get('create-id-visited',[CreateID::class,'visited']);
+
+Route::post('create-id-accept',[CreateID::class,'accept']);
+
+Route::post('create-id-decline',[CreateID::class,'decline']);
+
+Route::get('myids',[CreateID::class,'myIds']);
+
+// Route::post('add-coins',[CreateID::class,'addCoins']);
+
+Route::get('get-coins',[CreateID::class,'getCoins']);
+
+Route::post('coin-accept',[CreateID::class,'coinAccept']);
+
+Route::post('coin-decline',[CreateID::class,'coinDecline']);
+//coinDecline
+
+Route::post('add-coin-request',[CreateID::class,'coinAddRequest']);
+
+Route::get('coin-notvisited',[CreateID::class,'notCoinVisited']);
+
+Route::get('coin-visited',[CreateID::class,'coinVisited']);

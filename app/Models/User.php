@@ -17,13 +17,8 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-        'phone_number',
-        'status'
-    ];
+
+    protected $guarded = [];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -39,6 +34,7 @@ class User extends Authenticatable
      *
      * @var array<string, string>
      */
+     protected $primaryKey = "phone_number";
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
