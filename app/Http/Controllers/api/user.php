@@ -58,6 +58,26 @@ class user extends Controller
         $data = $data->update(['status'=>1]);
         return ($data==1)?response()->json(['status'=>true,'message'=>'Updated.'],200):response()->json(['status'=>false,'message'=>'something wrong happend.'],400);
     }
+    public function forgetPassword(Request $req)
+    {
+        $phone = $req->phone;
+        $otp = rand(1000, 9999);
+        $body="hi luckskull varification code is:".$otp;
+        $recipients = '91'.$phone;
+        $this->sendMessage($body,$recipients);
+        return response()->json(['status'=>true,'message'=>'Otp send.','opt'=>$otp],200);
+    }
+    public function updatePassword(Request $req)
+    {
+        # code...
+        $data = AuthUser::where('phone_number','=',$req->phone)->get();
+        $info = $data[0];
+
+        $newped = Hash::make($req->password);
+        $info = $info->update(['password'=>$newped]);
+        //
+        return ($info==1)?response()->json(['status'=>true,'message'=>'Password updated.'],200):response()->json(['status'=>false,'message'=>'something wrong happend.'],400);
+    }
     public function loginUser(Request $res)
     {
 

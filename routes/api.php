@@ -3,6 +3,9 @@
 use App\Http\Controllers\api\CreateID;
 use App\Http\Controllers\api\user;
 use App\Http\Controllers\api\Websites;
+use App\Http\Controllers\api\withdraw;
+use App\Http\Controllers\BankController;
+use App\Http\Controllers\Notifiaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -67,3 +70,28 @@ Route::post('add-coin-request',[CreateID::class,'coinAddRequest']);
 Route::get('coin-notvisited',[CreateID::class,'notCoinVisited']);
 
 Route::get('coin-visited',[CreateID::class,'coinVisited']);
+
+
+Route::get('my-notification',[Notifiaction::class,'getNotification']);
+
+Route::post('update-password',[user::class,'updatePassword']);
+
+Route::post('forget-password',[user::class,'forgetPassword']);
+
+Route::post('withdraw-request',[withdraw::class,'requestCoins']);
+
+Route::get('withdraw-request-all',[withdraw::class,'getAll']);
+
+//bank
+
+Route::post('bank-add',[BankController::class,'addBank']);
+
+Route::get('bank-all',[BankController::class,'getAllData']);
+
+Route::post('bank-update',[BankController::class,'updateBank']);
+
+Route::get('bank-delete/{id}',[BankController::class,'deleteBank']);
+
+Route::get('bank-find-one/{id}',[BankController::class,'findBank']);
+
+

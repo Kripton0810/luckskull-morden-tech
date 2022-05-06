@@ -34,7 +34,6 @@ class User extends Authenticatable
      *
      * @var array<string, string>
      */
-     protected $primaryKey = "phone_number";
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];

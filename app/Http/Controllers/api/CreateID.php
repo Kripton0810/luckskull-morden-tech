@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Notifiaction;
 use App\Models\CreateId as ModelsCreateId;
 use App\Models\DipositStack;
 use App\Models\User;
@@ -34,9 +35,12 @@ class CreateID extends Controller
     {
         try {
             $id = $req->id;
+            $uid = $req->userid;
             if ($id!=null) {
                 $req = array_merge($req->all(),["status"=>1]);
                 $data = ModelsCreateId::find($id);
+                $obj = new Notifiaction();
+                $obj->addNoti($data->userphone,"Your account has created in ".$data->siteurl." with username ".$uid);
                 $data = $data->update($req);
                 return ($data==1)?response()->json(['status'=>true,'message'=>'accepted.'],200):response()->json(['status'=>false,'message'=>'something wrong happend.'],400);
             } else {
@@ -52,9 +56,12 @@ class CreateID extends Controller
     {
         try {
             $id = $req->id;
+            // $uid = $req->userid;
             if ($id!=null) {
                 $req = array_merge($req->all(),["status"=>-1]);
                 $data = ModelsCreateId::find($id);
+                $obj = new Notifiaction();
+                $obj->addNoti($data->userphone,"Your account creation has declined in ".$data->siteurl." with username ".$data->userid);
                 $data = $data->update($req);
                 return ($data==1)?response()->json(['status'=>true,'message'=>'declined.'],200):response()->json(['status'=>false,'message'=>'something wrong happend.'],400);
             } else {
@@ -122,10 +129,10 @@ class CreateID extends Controller
     private function addCoins($newcoins,$phone)
     {
         $id = $phone;
-        $data = User::find($id);
-        $coins = $data->coins;
+        $data = User::where('phone_number','=',$phone)->get();
+        $coins = $data[0]->coins;
         $newconis = $coins + $newcoins;
-        $rqs = $data->update(["coins"=>$newconis]);
+        $rqs = $data[0]->update(["coins"=>$newconis]);
         return ($rqs==1)?response()->json(['status'=>true,'message'=>"$newcoins added to your account"],200):response()->json(['status'=>false,'message'=>'something wrong happend.'],400);
     }
 
@@ -138,6 +145,9 @@ class CreateID extends Controller
                 $data = DipositStack::find($id);
                 if ($data->status==0) {
                     $this->addCoins($data->coins,$data->phone);
+
+                    $obj = new Notifiaction();
+                    $obj->addNoti($data->phone,$data->coins." coins have added in your account");
                 $data = $data->update(["status"=>1]);
 
                     return ($data==1)?response()->json(['status'=>true,'message'=>'accepted.'],200):response()->json(['status'=>false,'message'=>'something wrong happend.'],400);
@@ -171,8 +181,8 @@ class CreateID extends Controller
     public function getCoins(Request $req)
     {
         $id = $req->bearerToken();
-        $data = User::find($id);
-        $coins = $data->coins;
+        $data = User::where('phone_number','=',$id)->get();
+        $coins = $data[0]->coins;
         return response()->json(['status'=>true,'message'=>"$coins you have in your account","coins"=>$coins],200);
     }
 
@@ -185,6 +195,9 @@ public function coinDecline(Request $req)
             $data = DipositStack::find($id);
 
             if ($data->status==0) {
+
+                    $obj = new Notifiaction();
+                    $obj->addNoti($data->phone,$data->coins."coins addition has decliened");
                     $data = $data->update(["status"=>-1]);
                     return ($data==1)?response()->json(['status'=>true,'message'=>'declined.'],200):response()->json(['status'=>false,'message'=>'something wrong happend.'],400);
             }
